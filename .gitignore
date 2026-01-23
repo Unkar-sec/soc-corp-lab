@@ -1,0 +1,38 @@
+# VM images / disks
+*.qcow2
+*.qcow2.*
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.img
+*.ova
+*.ovf
+*.iso
+
+# Captures / logs (often huge / sensitive)
+*.pcap
+*.pcapng
+*.evtx
+*.etl
+*.log
+
+# Secrets
+*.key
+*.pem
+*.pfx
+*.p12
+*.kdbx
+.env
+*.env
+
+# Editors / OS junk
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Evidence: don’t commit raw artifacts to a public repo
+incidents/**/evidence/*
+!incidents/**/evidence/README.md
+!incidents/**/evidence/hashes.txt
