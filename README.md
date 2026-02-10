@@ -1,5 +1,7 @@
 # SOC Corporate Lab — AD + Wazuh SIEM + Incident Response (Portfolio)
 
+![FW01 OPNsense dashboard](assets/screenshots/fw01/096-fw01-dashboard-initial.png)
+
 This repository documents building a realistic corporate-style security lab from scratch and running SOC workflows on top of it:
 - **Active Directory** (Windows Server) + domain-joined endpoints
 - centralized logging and detections (**Wazuh SIEM**)
@@ -16,6 +18,26 @@ The goal is a recruiter-friendly portfolio: architecture, configs, detections, r
 - Least-privilege policy: whitelist + **BLOCK+LOG** egress (with evidence)
 - Admin hardening: WebGUI restricted to **MGMT only**
 - SOC workflow documentation: **evidence → timeline → decisions → actions → lessons learned**
+
+---
+
+## Evidence (screenshots)
+These screenshots are included to prove the lab is actually built and working (not just a write-up).
+
+**Host networking (segmentation via Linux bridges):**  
+![Host bridges](assets/screenshots/fw01/020-host-bridges-mgmt-corp-soc.png)
+
+**FW01 interface/IP plan (multi-NIC mapping):**  
+![FW01 interface/IP summary](assets/screenshots/fw01/074-fw01-final-interface-ip-summary.png)
+
+**Hardening (WebGUI listens on MGMT only):**  
+![WebGUI MGMT only](assets/screenshots/fw01/098-fw01-webgui-listen-mgmt-only.png)
+
+**Firewall policy (CORP egress whitelist + BLOCK+LOG):**  
+![CORP rules](assets/screenshots/fw01/116-fw01-corp-rules-final.png)
+
+**Logging proof (blocked traffic visible in live view/logs):**  
+![Live view blocks](assets/screenshots/fw01/117-fw01-corp-liveview-blocks.png)
 
 ---
 
