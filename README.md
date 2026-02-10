@@ -126,6 +126,11 @@ Template: `incidents/_TEMPLATE/INCIDENT.md`
 - Detections: `detections/wazuh/`
 - Incident reports: `incidents/`
 
+### Networking & Firewall (FW01)
+- [Host networking (KVM/libvirt)](docs/host-networking-kvm.md)
+- [FW01 OPNsense setup](docs/fw01-opnsense-setup.md)
+- [FW01 firewall policy (MGMT/CORP/SOC)](docs/fw01-firewall-policy.md)
+
 ---
 
 ## License
