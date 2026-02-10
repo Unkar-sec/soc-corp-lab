@@ -8,6 +8,12 @@ This repository documents building a realistic “corporate-style” security la
 
 The goal is a recruiter-friendly portfolio: architecture, configs, detections, runbooks, and incident write-ups with evidence.
 
+## Recruiter highlights (what this demonstrates)
+- KVM/libvirt networking: NAT + Linux bridges (segmentation)
+- OPNsense multi-NIC firewall design + interface mapping
+- Least privilege policy: whitelist + BLOCK+LOG (with evidence)
+- Admin hardening: WebGUI restricted to MGMT only
+  
 ---
 
 ## Project goals
