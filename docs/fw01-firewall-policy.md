@@ -29,16 +29,20 @@ Example of tightening defaults and allowing only the required admin traffic (e.g
 ---
 
 ## CORP Rules — Whitelist + BLOCK+LOG
-Typical minimal outbound policy for CORP:
-- DNS (to defined DNS servers)
-- NTP (to defined NTP servers)
+CORP uses a minimal egress policy (least privilege):
+- DNS via **FW01** (`This Firewall`, TCP/UDP 53)
+- NTP to defined NTP servers
 - HTTP/HTTPS outbound as required
 - Everything else: **BLOCK+LOG**
 
-![CORP rules final](../assets/screenshots/fw01/116-fw01-corp-rules-final.png)
+> CORP clients use `10.20.20.1` (FW01) as their DNS resolver.
 
-Evidence of blocks in live view/logs:
-![CORP live view blocks](../assets/screenshots/fw01/117-fw01-corp-liveview-blocks.png)
+![CORP rules (final: DNS via FW01)](../assets/screenshots/fw01/118-fw01-corp-rules-final-dns-via-fw01.png)
+
+Evidence of blocked traffic in Live View:
+![Live View: CORP blocked traffic (ICMP)](../assets/screenshots/fw01/119-fw01-liveview-corp-block-icmp.png)
+
+> ICMP is intentionally blocked to demonstrate `BLOCK+LOG` (HTTP/HTTPS still works).
 
 ---
 
