@@ -34,10 +34,10 @@ These screenshots are included to prove the lab is actually built and working (n
 ![WebGUI MGMT only](assets/screenshots/fw01/098-fw01-webgui-listen-mgmt-only.png)
 
 **Firewall policy (CORP egress whitelist + BLOCK+LOG):**  
-![CORP rules](assets/screenshots/fw01/116-fw01-corp-rules-final.png)
+![CORP rules (final: DNS via FW01)](assets/screenshots/fw01/118-fw01-corp-rules-final-dns-via-fw01.png)
 
 **Logging proof (blocked traffic visible in live view/logs):**  
-![Live view blocks](assets/screenshots/fw01/117-fw01-corp-liveview-blocks.png)
+![Live View: CORP blocked traffic (ICMP)](assets/screenshots/fw01/119-fw01-liveview-corp-block-icmp.png)
 
 ---
 
