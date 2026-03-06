@@ -21,6 +21,11 @@ The goal is a recruiter-friendly portfolio: architecture, configs, detections, r
 
 ---
 
+## Latest progress
+- DC01 promoted to **`soc.lab`** (AD DS + DNS) with DNS forwarding via FW01 → see: [docs/ad-setup-dc01.md](docs/ad-setup-dc01.md)
+
+---
+
 ## Evidence (screenshots)
 These screenshots are included to prove the lab is actually built and working (not just a write-up).
 
@@ -39,6 +44,9 @@ These screenshots are included to prove the lab is actually built and working (n
 **Logging proof (blocked traffic visible in live view/logs):**  
 ![Live View: CORP blocked traffic (ICMP)](assets/screenshots/fw01/119-fw01-liveview-corp-block-icmp.png)
 
+**Active Directory (DC01 domain created):**  
+![ADUC: soc.lab domain](assets/screenshots/ad/230-dc01-aduc-domain-soc-lab.png)
+
 ---
 
 ## Build order (MVP)
@@ -54,7 +62,7 @@ These screenshots are included to prove the lab is actually built and working (n
 ## MVP scope (status)
 - [x] Network plan and addressing (MGMT/CORP/SOC)
 - [x] FW01 with deny-by-default egress policy + logging
-- [ ] DC01: domain bootstrap + DNS
+- [x] DC01: domain bootstrap + DNS (`soc.lab`)
 - [ ] WIN11-CL01: join domain + Sysmon (or equivalent telemetry)
 - [ ] SOC01: Wazuh + dashboards + agents
 - [ ] Scenarios + write-ups:
