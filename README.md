@@ -63,7 +63,7 @@ These screenshots are included to prove the lab is actually built and working (n
 - [x] Network plan and addressing (MGMT/CORP/SOC)
 - [x] FW01 with deny-by-default egress policy + logging
 - [x] DC01: domain bootstrap + DNS (`soc.lab`)
-- [ ] WIN11-CL01: join domain + Sysmon (or equivalent telemetry)
+- [x] WIN11-CL01: join domain + baseline validation
 - [ ] SOC01: Wazuh + dashboards + agents
 - [ ] Scenarios + write-ups:
   - [ ] 001 Recon / Port scan (detection + containment + TP)
