@@ -75,23 +75,6 @@ These screenshots prove the lab is built and working (not just a write-up).
 
 ---
 
-## High-level architecture
-```text
-Internet
-  │
-  └─ libvirt "default" NAT (WAN, e.g. 192.168.122.0/24)
-        │
-        ├─ FW01 (OPNsense)
-        │    - WAN  (DHCP via libvirt NAT)
-        │    - MGMT (10.10.10.0/24)
-        │    - CORP (10.20.20.0/24)
-        │    - SOC  (10.30.30.0/24)
-        │
-        ├─ DC01 (Windows Server, AD DS + DNS)        [CORP]
-        ├─ WIN11-CL01 (Domain endpoint + telemetry)  [CORP]
-        └─ SOC01 (Wazuh SIEM)                        [SOC]
-
-
 ## Documentation (start here)
 **Core docs:**
 - `docs/network-plan.md`
@@ -130,3 +113,21 @@ All testing is done in an isolated lab environment:
 
 ## License
 MIT License — see `LICENSE`.
+
+
+
+## High-level architecture
+```text
+Internet
+  │
+  └─ libvirt "default" NAT (WAN, e.g. 192.168.122.0/24)
+        │
+        ├─ FW01 (OPNsense)
+        │    - WAN  (DHCP via libvirt NAT)
+        │    - MGMT (10.10.10.0/24)
+        │    - CORP (10.20.20.0/24)
+        │    - SOC  (10.30.30.0/24)
+        │
+        ├─ DC01 (Windows Server, AD DS + DNS)        [CORP]
+        ├─ WIN11-CL01 (Domain endpoint + telemetry)  [CORP]
+        └─ SOC01 (Wazuh SIEM)                        [SOC]
