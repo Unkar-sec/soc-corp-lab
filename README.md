@@ -92,3 +92,41 @@ Internet
         └─ SOC01 (Wazuh SIEM)                        [SOC]
 
 
+## Documentation (start here)
+**Core docs:**
+- `docs/network-plan.md`
+- `docs/architecture.md`
+- `docs/threat-model.md`
+
+### Networking & Firewall (FW01)
+- [Host networking (KVM/libvirt)](docs/host-networking-kvm.md)
+- [FW01 OPNsense setup](docs/fw01-opnsense-setup.md)
+- [FW01 firewall policy (MGMT/CORP/SOC)](docs/fw01-firewall-policy.md)
+
+### Active Directory (DC01)
+- [DC01 AD/DNS setup (soc.lab)](docs/ad-setup-dc01.md)
+
+### Endpoints
+- [WIN11-CL01 domain join (soc.lab)](docs/win11-domain-join.md)
+
+
+## Lab safety model
+All testing is done in an isolated lab environment:
+- Segmented networks: **MGMT / CORP / SOC** (+ optional MAL later).
+- Policy: **only the firewall (FW01) has controlled WAN access**; other VMs do not directly touch the home network.
+- No host↔guest convenience channels for risky VMs: shared folders / clipboard / drag&drop = **OFF** (enable temporarily only when needed).
+- Use disposable VMs: snapshot → test → revert.
+- Focus on **TTP simulations and safe test scenarios** (no destructive payloads).
+
+---
+
+## Verification (quick checks)
+- From **MGMT workstation**: access OPNsense WebGUI via `https://<FW01_MGMT_IP>` (MGMT-only)
+- From **CORP**: DNS/NTP/HTTP(S) allowed; Live View shows **BLOCK+LOG** hits
+- On **DC01**: `nslookup example.com` works (external resolution via forwarder)
+- On **WIN11-CL01**: `whoami` shows `soc\user1` and `LOGONSERVER` points to `\\DC01`
+
+---
+
+## License
+MIT License — see `LICENSE`.
