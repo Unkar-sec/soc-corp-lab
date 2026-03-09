@@ -15,15 +15,17 @@ The goal is a recruiter-friendly portfolio: architecture, configs, detections, r
 ## Recruiter highlights (what this demonstrates)
 - KVM/libvirt networking: NAT + Linux bridges (segmentation)
 - OPNsense multi-NIC firewall design + interface mapping
-- Least-privilege policy: whitelist + **BLOCK+LOG** egress (with evidence)
+- Least-privilege egress: whitelist + **BLOCK+LOG** (with evidence)
 - Admin hardening: WebGUI restricted to **MGMT only**
-- SOC workflow documentation: **evidence → timeline → decisions → actions → lessons learned**
+- Documented SOC workflow: **evidence → timeline → decisions → actions → lessons learned**
 
 ---
 
 ## Latest progress
-- DC01 promoted to **`soc.lab`** (AD DS + DNS) with DNS forwarding via FW01 → [docs/ad-setup-dc01.md](docs/ad-setup-dc01.md)
-- WIN11-CL01 joined to **`soc.lab`** and validated (`whoami`, `LOGONSERVER`) → [docs/win11-domain-join.md](docs/win11-domain-join.md)
+- **FW01**: CORP policy updated (DNS via FW01) + Live View evidence → `docs/fw01-firewall-policy.md`
+- **DC01**: promoted to **`soc.lab`** (AD DS + DNS) → [docs/ad-setup-dc01.md](docs/ad-setup-dc01.md)
+- **WIN11-CL01**: joined to **`soc.lab`** and validated (`whoami`, `LOGONSERVER`) → [docs/win11-domain-join.md](docs/win11-domain-join.md)
+- **SOC01**: build started (static IP + SOC egress rule for Ubuntu mirrors) → [docs/soc01-build-start.md](docs/soc01-build-start.md)
 
 ---
 
@@ -51,13 +53,19 @@ These screenshots prove the lab is built and working (not just a write-up).
 **Endpoint joined to domain (validation):**  
 ![WIN11 domain identity tests](assets/screenshots/endpoints/241-win11-domain-identity-tests.png)
 
+**SOC01 build started (static IP):**  
+![SOC01 static IP](assets/screenshots/soc01/301-soc01-network-static-ip.png)
+
+**SOC egress rule added (HTTP 80 for mirrors):**  
+![FW01 SOC rules (HTTP added)](assets/screenshots/fw01/304-fw01-soc-rules-http-added.png)
+
 ---
 
 ## Build order (MVP)
 1) Host setup (KVM/libvirt) + network plan  
 2) FW01 (OPNsense): WAN NAT + MGMT/CORP/SOC + baseline rules  
 3) DC01: AD DS + DNS + initial OUs/users  
-4) Endpoint(s): domain join + baseline validation  
+4) Endpoints: domain join + baseline validation  
 5) SOC01: Wazuh + dashboards + agents  
 6) Run scenarios → write incident reports
 
